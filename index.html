@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restore BAVInterception Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Body and Container Styling */
+        body {
+            background-color: #1e1e2f;
+            color: #f5f5f5;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2b2b3c;
+            color: #f5f5f5;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-out;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #c5c5c5;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-size: 1.8rem;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+        ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: #d1d1d1;
+        }
+        ul li i {
+            color: #00d4ff;
+            margin-right: 10px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Button Styling */
+        .download-button {
+            display: inline-block;
+            background-color: #00d4ff;
+            color: #1e1e2f;
+            padding: 12px 25px;
+            margin-top: 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            animation: slideIn 1.2s ease-out;
+        }
+        .download-button:hover {
+            background-color: #1e90ff;
+            color: #f5f5f5;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Warning Box */
+        .warning {
+            background-color: #ff4d4d;
+            color: #f5f5f5;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9999;
+            border-radius: 5px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2b2b3c;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .made-by {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BAVRestoreTool</h1>
+        <p>Comprehensive Tool for Restoring and Cleaning System File Associations</p>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section>
+            <h2>About the Tool</h2>
+            <p>BAVRestoreTool helps users reverse changes made by BAVInterception on Windows systems. It provides an easy-to-use interface for restoring file associations, removing registry changes, and fully cleaning your system. Created with care by <span class="made-by">BatchDebug</span> to ensure stability and recovery.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li><i class="fas fa-sync-alt"></i>Restore default file associations for .bat, .cmd, .exe, and more.</li>
+                <li><i class="fas fa-trash-alt"></i>Remove registry entries and context menu items left by BAVInterception.</li>
+                <li><i class="fas fa-file-alt"></i>Comprehensive logging for full transparency and troubleshooting.</li>
+                <li><i class="fas fa-list-ul"></i>Easy-to-navigate menu for both basic and full cleanup options.</li>
+                <li><i class="fas fa-shield-alt"></i>Safety disclaimers and clear instructions for worry-free use.</li>
+            </ul>
+            <a href="https://github.com/BatchDebug/BavRestoreTool/blob/main/BAVRestoreTool.bat" class="download-button">Download Tool</a>
+        </section>
+
+        <!-- System Requirements -->
+        <section>
+            <h2>System Requirements</h2>
+            <p><i class="fas fa-laptop-code"></i> Windows 10, Windows 11, or later.</p>
+            <p><i class="fas fa-user-shield"></i> Administrator privileges required.</p>
+            <p><i class="fas fa-hdd"></i> At least 1MB of free disk space.</p>
+        </section>
+
+        <!-- FAQ Section -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <h3><i class="fas fa-question-circle"></i> Is it safe to use?</h3>
+            <p>Yes, the tool is designed to restore original settings. However, always ensure you have a backup before use.</p>
+
+            <h3><i class="fas fa-question-circle"></i> Can it restore other tools' changes?</h3>
+            <p>No, this tool is specifically for changes made by BAVInterception.</p>
+
+            <h3><i class="fas fa-question-circle"></i> How do I know it worked?</h3>
+            <p>Check the log provided at the end to see which actions were completed successfully.</p>
+        </section>
+
+        <!-- Support Section -->
+        <section>
+            <h2>Support</h2>
+            <p>If you encounter issues, please report them on the <a href="https://github.com/BatchDebug/BavRestoreTool/issues" style="color: #00d4ff; text-decoration: underline;">GitHub Issues page</a>.</p>
+        </section>
+
+        <!-- Warning Section -->
+        <section class="warning">
+            <h2>⚠️ Safety Notice</h2>
+            <p>This tool makes changes to system registry and file associations. Please proceed with caution, and review each action carefully. Creating a system restore point before use is recommended.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ by <span class="made-by">BatchDebug</span></p>
+    </footer>
+</body>
+</html>
