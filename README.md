@@ -1,3 +1,6 @@
+# Coming soon
+Tool still in testing phase!
+
 # Restore BAVInterception - Comprehensive System Restoration Tool
 
 Welcome to the Restore BAVInterception tool! This script is designed to restore and clean up system file associations, registry entries, and other potential changes related to BAVInterception, ensuring that your system remains stable, secure, and fully functional. Created with care and attention by BatchDebug, this tool provides a user-friendly interface that simplifies system recovery tasks. 
