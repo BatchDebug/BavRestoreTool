@@ -1,5 +1,5 @@
-# Coming soon
-Tool still in testing phase!
+## Notice
+Tool still in Beta phase!
 
 # Restore BAVInterception - Comprehensive System Restoration Tool
 
