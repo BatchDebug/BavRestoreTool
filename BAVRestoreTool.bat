@@ -155,7 +155,7 @@ color 4F
 echo ===============================================================================
 echo WARNING: This tool may alter important system settings and registry entries.
 echo It should only be used by experienced users or under guidance.
-echo Running this mode incorrectly may lead to system issues.
+echo Running this tool incorrectly may lead to system issues.
 echo ===============================================================================
 set /p confirm="Are you sure you want to proceed? (Y/N): "
 if /i not "%confirm%"=="Y" (
