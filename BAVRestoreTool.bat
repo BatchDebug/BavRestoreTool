@@ -159,11 +159,7 @@ echo Running this tool incorrectly may lead to system issues.
 echo ===============================================================================
 set /p confirm="Are you sure you want to proceed? (Y/N): "
 if /i not "%confirm%"=="Y" (
-    color 07
-    cls
-    echo Operation canceled.
-    pause
-    goto mainmenu
+    goto :mainmenu
 cls
 color 07
 echo Performing Full Cleanup...
