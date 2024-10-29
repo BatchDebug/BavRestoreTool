@@ -24,7 +24,7 @@ echo.
 echo 1. Restore all file associations
 echo 2. Restore individual file associations
 echo 3. View restoration log
-echo 4. Full Cleanup
+echo 4. Full Cleanup (BROKEN)
 echo 5. Help
 echo 6. Exit
 echo.
