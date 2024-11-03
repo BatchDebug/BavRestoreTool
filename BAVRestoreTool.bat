@@ -24,18 +24,16 @@ echo.
 echo 1. Restore all file associations
 echo 2. Restore individual file associations
 echo 3. View restoration log
-echo 4. Full Cleanup (BROKEN)
-echo 5. Help
-echo 6. Exit
+echo 4. Help
+echo 5. Exit
 echo.
 set /p choice="Enter your choice (1-6): "
 
 if "%choice%"=="1" goto :restore_all
 if "%choice%"=="2" goto :restore_individual
 if "%choice%"=="3" goto :view_log
-if "%choice%"=="4" goto :full_cleanup
-if "%choice%"=="5" goto :help
-if "%choice%"=="6" exit /b
+if "%choice%"=="4" goto :help
+if "%choice%"=="5" exit /b
 goto :mainmenu
 
 :restore_all
@@ -146,62 +144,6 @@ if exist "%~dp0restore_log.txt" (
     echo No restoration log found.
 )
 echo.
-pause
-goto :mainmenu
-
-:full_cleanup
-cls
-color 4F
-echo ===============================================================================
-echo WARNING: This tool may alter important system settings and registry entries.
-echo It should only be used by experienced users or under guidance.
-echo Running this tool incorrectly may lead to system issues.
-echo ===============================================================================
-set /p confirm="Are you sure you want to proceed? (Y/N): "
-if /i not "%confirm%"=="Y" (
-    goto :mainmenu
-cls
-color 07
-echo Performing Full Cleanup...
-
-:: Example cleanup tasks to remove old files, associations, and registry keys
-echo Removing old context menu entries...
-reg delete "HKEY_CLASSES_ROOT\*\shell\BatchAntivirus" /f >nul 2>&1 && (
-    echo Removed Batch Antivirus context menu entry.
-) || (
-    echo No old context menu entry found.
-)
-
-echo Removing related registry keys...
-for %%A in ("oldbatfile" "oldcmdfile" "oldexefile") do (
-    reg delete "HKEY_CLASSES_ROOT\%%~A\shell\open\command" /f >nul 2>&1 && (
-        echo Removed old association for '%%~A'.
-    ) || (
-        echo No old association found for '%%~A'.
-    )
-)
-
-echo Checking for leftover files...
-set "cleanup_dirs=%APPDATA%\BatchAntivirus %ProgramData%\BatchAntivirus %LOCALAPPDATA%\BatchAntivirus"
-for %%D in (%cleanup_dirs%) do (
-    if exist "%%D" (
-        rmdir /s /q "%%D"
-        echo Removed leftover files in '%%D'
-    ) else (
-        echo No leftover files found in '%%D'
-    )
-)
-
-:: Ensure no services remain running
-echo Stopping any related services...
-net stop "BatchAntivirusService" /y >nul 2>&1 && (
-    sc delete "BatchAntivirusService" >nul 2>&1
-    echo Stopped and deleted Batch Antivirus service.
-) || (
-    echo No Batch Antivirus service found.
-)
-
-echo Cleanup completed. Returning to main menu.
 pause
 goto :mainmenu
 
