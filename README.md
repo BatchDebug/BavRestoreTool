@@ -1,5 +1,6 @@
 ## Notice
-Tool still in Beta phase!
+Tool included in the newest Version of BAV
+https://github.com/anic17/Batch-Antivirus
 
 # Restore BAVInterception - Comprehensive System Restoration Tool
 
